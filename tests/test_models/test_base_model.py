@@ -7,10 +7,15 @@ Unittest classes:
     TestBaseModel_to_dict
 """
 import os
-import models
+import sys
 import unittest
 from datetime import datetime
 from time import sleep
+models_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+sys.path.append(models_dir)
+
+# Now you can import the models package and its modules                                                                                                  
+import models
 from models.base_model import BaseModel
 
 
