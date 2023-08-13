@@ -6,18 +6,9 @@ Unittest classes:
     TestFileStorage_methods
 """
 import os
-import sys
 import json
+import models
 import unittest
-
-# Get the absolute path to the directory containing this script
-current_dir = os.path.dirname(os.path.abspath(__file__))
-
-# Calculate the absolute path to the project's root directory (one level up)
-project_root = os.path.abspath(os.path.join(current_dir, ".."))
-
-# Add the project root directory to the Python path
-sys.path.append(project_root)
 from datetime import datetime
 from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
