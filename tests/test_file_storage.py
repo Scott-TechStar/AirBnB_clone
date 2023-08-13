@@ -6,8 +6,18 @@ Unittest classes:
     TestFileStorage_methods
 """
 import os
-import json
+import sys
+
+# Get the absolute path to the directory containing this script
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Calculate the absolute path to the project's root directory (one level up)
+project_root = os.path.abspath(os.path.join(current_dir, ".."))
+
+# Add the project root directory to the Python path
+sys.path.append(project_root)
 import models
+import json
 import unittest
 from datetime import datetime
 from models.base_model import BaseModel
@@ -165,7 +175,11 @@ class TestFileStorage_methods(unittest.TestCase):
         self.assertIn("Review." + rv.id, objs)
 
     def test_reload_no_file(self):
-        self.assertRaises(FileNotFoundError, models.storage.reload())
+        storage = FileStorage()  # Create an instance of FileStorage to test
+        print("Before Reload()")
+        with self.assertRaises(FileNotFoundError):
+            storage.reload()  # Call the reload method within the context manager
+        print("After Reload()")
 
     def test_reload_with_arg(self):
         with self.assertRaises(TypeError):
