@@ -17,7 +17,6 @@ project_root = os.path.abspath(os.path.join(current_dir, ".."))
 
 # Add the project root directory to the Python path
 sys.path.append(project_root)
-import models
 import unittest
 from datetime import datetime
 from time import sleep
