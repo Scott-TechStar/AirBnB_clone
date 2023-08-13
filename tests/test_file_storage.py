@@ -8,7 +8,6 @@ Unittest classes:
 import os
 import sys
 import json
-import models
 import unittest
 
 # Get the absolute path to the directory containing this script
