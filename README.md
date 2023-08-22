@@ -10,3 +10,7 @@
 
 Airbnb Clone Project is a complete web application, integrates database storage, 
 a back-end API, and front-end interfacing in a clone of AirBnB.
+
+## Currectly Implemented:
+  * The Console
+  * Webstatic-Frontend
